@@ -3,6 +3,11 @@
                 <title>Reg-log</title>
 
                 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
+                <style>
+                  .jumbotron{
+                    height: 100%;
+                  }
+                </style>
         </head>
         <body>
  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -16,9 +21,31 @@
           <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
+          <?php
+
+          if($loggedin) {
+            echo $_SESSION['email'];
+            ?>
+          <li class="nav-item">
+              <a class="nav-link" href="<?= site_url('/users/logout')?>">logout</a>
+          </li>
+          <?php
+            }
+          
+
+          else {
+
+          ?>
           <li class="nav-item">
             <a class="nav-link" href="<?= site_url('/users/register_view')?>">Register</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= site_url('/users/login_view')?>">Login</a>
+          </li>
+
+          <?php
+            }
+        ?>
           <li class="nav-item">
             <a class="nav-link disabled" href="#">Disabled</a>
           </li>
