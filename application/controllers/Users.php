@@ -43,9 +43,9 @@ class Users extends CI_Controller {
 		else
 		{
 			
-			// $this->users_model->set_users();
-			$this->load->view('templates/header', $data);
-			$this->load->view('users/login_success', $data);
+			$this->users_model->set_users();
+			$this->load->view('templates/header');
+			$this->load->view('users/registered.php');
 			$this->load->view('templates/footer');
 
 		}

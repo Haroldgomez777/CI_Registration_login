@@ -2,7 +2,7 @@
 	<div class="container">
 <?php echo validation_errors(); ?>
 
-<?php echo form_open('users/create','id="signupform2"'); ?>
+<?php echo form_open('users/register_view','id="signupform2"'); ?>
     <p><label id="lfname" for="name">firstname</label>
         <input id="firstname" type="text" name="firstname"/></p>
     <p><label id="llname" for="name">lastname</label>
