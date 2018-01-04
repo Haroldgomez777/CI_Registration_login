@@ -39,7 +39,7 @@ class Users extends CI_Controller {
 
 		$isloggedin = $this->users_model->isloggedin();
 		$data['loggedin'] = $isloggedin;
-		$this->load->view('templates/header');
+		$this->load->view('templates/header',$data);
 		$this->load->view('pages/registration');
 		$this->load->view('templates/footer');
 		}
@@ -49,7 +49,7 @@ class Users extends CI_Controller {
 			$isloggedin = $this->users_model->isloggedin();
 			$data['loggedin'] = $isloggedin;
 			$this->users_model->set_users();
-			$this->load->view('templates/header');
+			$this->load->view('templates/header',$data);
 			$this->load->view('users/registered.php');
 			$this->load->view('templates/footer');
 
