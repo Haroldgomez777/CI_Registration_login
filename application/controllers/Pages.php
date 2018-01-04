@@ -10,6 +10,8 @@ public function view($page = 'home')
         }
 
         $data['title'] = ucfirst($page); // Capitalize the first letter
+        $isloggedin = $this->users->isloggedin();
+		$data['loggedin'] = $isloggedin;
 
         $this->load->view('templates/header', $data);
         $this->load->view('pages/'.$page, $data);

@@ -45,4 +45,26 @@ class Users_model extends CI_Model {
 		}
 	}
 
+	public function get_user_status()
+	{
+		if($this->isloggedin()) {
+
+			$data['name'] = $_SESSION['firstname'];
+			$data['email'] = $_SESSION['email'];
+			$query = $_SESSION['userstatus'];
+			
+			
+			if($query==='1') {
+				return 1;
+			}
+			else {
+				return 0;
+			}
+
+	}
+	else {
+		return 0;
+	}
+	}
+
 }

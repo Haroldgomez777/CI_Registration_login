@@ -7,6 +7,13 @@
                   .jumbotron{
                     height: 100%;
                   }
+                table {
+                border-collapse: collapse;
+                }
+
+                th,td {
+                border: 1px solid black;
+                }
                 </style>
         </head>
         <body>
@@ -19,13 +26,12 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="<?= site_url('/home')?>">Home <span class="sr-only">(current)</span></a>
           </li>
           <?php
 
           if($loggedin) {
-            echo $_SESSION['email'];
-            ?>
+            ?> <p style="color: white;"><?php echo $_SESSION['email'];?></p>
           <li class="nav-item">
               <a class="nav-link" href="<?= site_url('/users/logout')?>">logout</a>
           </li>

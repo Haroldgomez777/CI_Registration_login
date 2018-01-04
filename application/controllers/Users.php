@@ -82,15 +82,23 @@ class Users extends CI_Controller {
 
 		if($data_l) 
 		{
-
 			$this->session->set_userdata($data_l);
+			if($data_l['userstatus']==1) 
+			{
 
+	        		redirect('/admin');
+
+			}
+
+			
+			else
+			{
 				$isloggedin = $this->users_model->isloggedin();
 				$data['loggedin'] = $isloggedin;
 				$this->load->view('templates/header', $data);
 				$this->load->view('users/login_success', $data);
 				$this->load->view('templates/footer');
-
+			}
 		}
 		else 
 		{
@@ -124,4 +132,6 @@ class Users extends CI_Controller {
 		$this->load->view('users/login_failed');
 		$this->load->view('templates/footer');
 	}
+
+
 }
